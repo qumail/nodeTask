@@ -1,0 +1,236 @@
+{
+	"info": {
+		"_postman_id": "fe25064c-3219-4659-9c0b-6322c1a86695",
+		"name": "NodeTask Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register User",
+			"_postman_id": "2b5e2ee0-fac8-4f37-b719-14bf932e2a67",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"xyz@gmail.com\", \"password\": \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/api/register"
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"_postman_id": "ee12bb46-e6f6-4461-9043-cdfe53d9f5a7",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"xyz@gmail.com\", \"password\": \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/api/login"
+			},
+			"response": []
+		},
+		{
+			"name": "Create New Post",
+			"_postman_id": "4c6a5732-08ed-4423-9c46-07bc886b6330",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/qumai/OneDrive/Desktop/qumail/Group 8429.png"
+						},
+						{
+							"key": "title",
+							"value": "Rational",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Lorem Ipsum Lorem Ipsum Ipsum Ipsum Ipsum",
+							"type": "text"
+						},
+						{
+							"key": "tags",
+							"value": "Ipsum",
+							"type": "text"
+						}
+					],
+					"options": {
+						"formdata": {}
+					}
+				},
+				"url": "http://localhost:5000/api/post"
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch all Posts",
+			"_postman_id": "00cace8f-0e95-462a-8cba-3b768888a104",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:5000/api/posts"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Post By Title",
+			"_postman_id": "d51b4144-6091-4115-bfe9-d90efdb102b7",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"rational\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/api/post/title"
+			},
+			"response": []
+		},
+		{
+			"name": "Search Post by Ttile, Tags, Username and Date",
+			"_postman_id": "284e5ffa-2913-4f65-9e68-82c681e33dbd",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"rational\", \"tags\": [\"ipsum\"], \"user\": \"John\", \"maxDate\": \"2022-10-27\", \"minDate\": \"2022-10-01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/api/search/post"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Post",
+			"_postman_id": "67ac19c1-5d6a-4bfa-bcb3-b13c308850bf",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Lorem Ipsum\", \"description\": \"Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/api/post/6358ea3ba5c8ea2a9ccf40af"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a Post",
+			"_postman_id": "09baa7fe-bfaf-4b9c-8b4e-1305f1043439",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:5000/api/post/6358ea3ba5c8ea2a9ccf40af"
+			},
+			"response": []
+		},
+		{
+			"name": "Total Number posts by tags",
+			"_postman_id": "1412e2d0-9018-4a71-a027-fb71c2ba2711",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tags\": [\"Lorem\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/api/number-tags/post"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {
+			"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InF1bWFpbCIsImlhdCI6MTY2Njc3MDM3NywiZXhwIjoxNjk4MzA2Mzc3fQ.2RVb_N_hs153NMyknFYt98jywVgLvYOHr_xHmd5US8M"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "9deb699f-d280-482c-8107-6a9849f5bede",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "75b8c1e3-0f99-4ade-948f-81f5cbe11a27",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
