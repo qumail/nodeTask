@@ -9,6 +9,7 @@ require('dotenv').config({
     path: './config/config.env',
 });
 
+console.log('------------------------------------Node Task Assigment-------------------------------')
 
 app.use(express.json());
 
